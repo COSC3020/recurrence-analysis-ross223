@@ -31,3 +31,22 @@ function mystery(n) {
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+The recursion stops when $n \le 1$. As the mystery function is called, it recursively calls 
+itself 3 times each time dividing n by 3. This results in the mystery function part of the 
+runtime to be 3T(n/3).
+There is also a loop which runs n^5 times based on the loop conditions.
+
+Therefore our recurrence relation looks something like:
+    T(n) = 3T(n/3) + n^5
+         = 3(3T(n/9) + n^5/3) + n^5 = 9T(n/9) + 2n^5
+         = 3(9T(n/27) + 2n^5/3) + n^5 = 27(n/27) + 3n^5
+    ...
+         = 3^iT(n/3^i) + in^5
+    i = log(n)
+         = n + n^5log(n) => $\Theta (n^5logn)$
+
+Since this is $\Theta$ and we want big O the closest tight bound would be the next power of n which is n^6
+
+Therfore the tight big O bound is O(n^6)
+
