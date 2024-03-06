@@ -39,21 +39,19 @@ There is also a loop which runs n^5 times based on the loop conditions.
 
 Therefore our recurrence relation looks something like:
 
-T(n) = 3T(n/3) + n^5
+T(n) = 3T(n/3) + n^5 + some constants which dont matter
     
-   = 3(3T(n/9) + n^5/3) + n^5 = 9T(n/9) + 2n^5
+   = 3(3T(n/9) + (n/3)^5) + n^5 = 9T(n/9) + n^5/3^4 + n^5
          
-   = 3(9T(n/27) + 2n^5/3) + n^5 = 27(n/27) + 3n^5
+   = 9(3T(n/27) + (n/9)^5) + (n^5/3^4) + n^5 = 27T(n/27) + n^5/9^4 + n^5/3^4 + n^5
          
  ...
  
-   = 3^iT(n/3^i) + in^5
+   = 3^iT(n/3^i) + n^5 $\sum_{k=0}^i (1/3^4(k-1))
          
 So take: i = log(n)
     
-   = n + n^5log(n) => $\Theta (n^5logn)$
+   = n + n^5 => O(n^5)
 
-Since this is $\Theta$ and we want big O the closest tight bound would be the next power of n which is n^6
-
-Therfore the tight big O bound is O(n^6)
+So $T(n) \in O(n^5)$
 
