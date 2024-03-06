@@ -39,19 +39,19 @@ There is also a loop which runs n^5 times based on the loop conditions.
 
 Therefore our recurrence relation looks something like:
 
-T(n) = 3T(n/3) + n^5 + some constants which dont matter
+$T(n) = 3T(n/3) + n^5$ + some constants which dont matter
     
-   = 3(3T(n/9) + (n/3)^5) + n^5 = 9T(n/9) + n^5/3^4 + n^5
+   = $3(3T(n/9) + (n/3)^5) + n^5 = 9T(n/9) + n^5/3^4 + n^5$
          
-   = 9(3T(n/27) + (n/9)^5) + (n^5/3^4) + n^5 = 27T(n/27) + n^5/9^4 + n^5/3^4 + n^5
+   = $9(3T(n/27) + (n/9)^5) + (n^5/3^4) + n^5 = 27T(n/27) + n^5/9^4 + n^5/3^4 + n^5$
          
  ...
  
-   = 3^iT(n/3^i) + n^5 $\sum_{k=0}^i 1/3^{4(k-1)}$
+   = $3^iT(n/3^i) + n^5 \sum_{k=0}^i 1/3^{4(k-1)}$
          
 So take: i = log(n) which simplifies the expression to:
     
-   = n + n^5 so take the bigget term: O(n^5)
+   = $n + n^5$ so take the bigget term: O(n^5)
 
 So $T(n) \in O(n^5)$
 
