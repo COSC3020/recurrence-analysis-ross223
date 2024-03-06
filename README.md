@@ -47,11 +47,11 @@ T(n) = 3T(n/3) + n^5 + some constants which dont matter
          
  ...
  
-   = 3^iT(n/3^i) + n^5 $\sum_{k=0}^i (1/3^4(k-1))$
+   = 3^iT(n/3^i) + n^5 $\sum_{k=0}^i (1/3^43^k-1)$
          
-So take: i = log(n)
+So take: i = log(n) which simplifies the expression to:
     
-   = n + n^5 => O(n^5)
+   = n + n^5 so take the bigget term: O(n^5)
 
 So $T(n) \in O(n^5)$
 
