@@ -55,4 +55,6 @@ So take: i = log(n) which simplifies the expression to:
 
 So $T(n) \in O(n^5)$
 
+## Sources
+
 Used help from SamuelGlz-1 for confusion about the n^5
